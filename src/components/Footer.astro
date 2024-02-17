@@ -1,0 +1,40 @@
+---
+import Social from "./Social.astro";
+
+const tutorialLink = "https://docs.astro.build/en/tutorial/0-introduction/";
+const tutorialText = "Build your first Astro Blog";
+---
+
+<footer>
+  <div class="note">
+    Remember, this it's just a tutorial you can found here: <a
+      href={tutorialLink}>{tutorialText}</a
+    >
+  </div>
+  <div class="social">
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: rgba(219, 253, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+  .note {
+    width: 40%;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

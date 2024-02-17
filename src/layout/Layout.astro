@@ -1,0 +1,48 @@
+---
+import Hamburger from "../components/Hamburger.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="layout">
+      <Hamburger />
+      <Navigation />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+
+      <script>
+        import "../scripts/menu.js";
+      </script>
+    </div>
+  </body>
+</html>
+
+<style>
+  .layout {
+    padding: 50px;
+    border-radius: 20px;
+    background-color: white;
+  }
+</style>
