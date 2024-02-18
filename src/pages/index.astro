@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
+import Greeting from "../components/Greeting";
 
 const pageTitle = "Home - Astro Tutorial";
 const headerTitle = "Astro Blog Tutorial";
@@ -8,4 +9,11 @@ const headerTitle = "Astro Blog Tutorial";
 
 <BaseLayout title={pageTitle}>
   <Header title={headerTitle} />
+
+  <div class="greeting">
+    👋🏼 <Greeting
+      client:load
+      messages={["Hi", "Hello", "Holilla", "Holi", "Wenisss"]}
+    />
+  </div>
 </BaseLayout>
