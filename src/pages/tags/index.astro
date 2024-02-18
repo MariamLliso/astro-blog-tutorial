@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+
+const pageTitle = "Tags - Astro Tutorial";
+const headerTitle = "Tags";
+
+const allPosts = await Astro.glob("../posts/*.md"); // grab the data from all your Markdown files
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+
+<BaseLayout title={pageTitle}>
+  <Header title={headerTitle} />
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    {
+      tags.map((tag) => (
+        <li>
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+</style>
