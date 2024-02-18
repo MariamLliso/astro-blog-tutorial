@@ -1,6 +1,5 @@
 ---
-import "../styles/global.css";
-import Layout from "../layout/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 
 const pageTitle = "About Me - Astro Tutorial";
@@ -25,7 +24,7 @@ const skills = [
 ];
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
   <Header title={headerTitle} />
 
   <p>Here are a few facts about me:</p>
@@ -46,4 +45,4 @@ const skills = [
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
-</Layout>
+</BaseLayout>

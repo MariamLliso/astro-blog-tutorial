@@ -19,6 +19,15 @@ h1 {
   font-size: 2.5rem;
 }
 
+a {
+  color: #6247aa;
+  text-decoration: underline #6247aa dashed;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .navbar {
   background: rgba(219, 253, 0, 0.1);
 }
@@ -45,6 +54,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   list-style: none;
+  margin: 0;
   padding: 20px 0;
   background: rgba(219, 253, 0, 0.1);
 }
@@ -53,7 +63,7 @@ h1 {
   padding: 10px 0;
 }
 
-a {
+.nav-links li a {
   font-weight: bold;
   text-decoration: none;
   color: black;
@@ -62,7 +72,7 @@ a {
   transition: all 0.4s ease;
 }
 
-a::after {
+.nav-links li a::after {
   content: "";
   position: absolute;
   height: 2px;
@@ -74,13 +84,14 @@ a::after {
   transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 
-a:hover {
+.nav-links li a:hover {
   color: #a7c957;
 }
 
-a:hover::after {
+.nav-links li a:hover::after {
   width: 100%;
 }
+
 .navbar {
   display: none;
 }
@@ -90,6 +101,21 @@ a:hover::after {
 }
 
 @media screen and (min-width: 636px) {
+  .navbar {
+    display: contents;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(219, 253, 0, 0.1);
+  }
+
   .hamburger {
     display: none;
   }

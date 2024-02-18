@@ -1,12 +1,11 @@
 ---
-import "../styles/global.css";
-import Layout from "../layout/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 
 const pageTitle = "Home - Astro Tutorial";
 const headerTitle = "Astro Blog Tutorial";
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
   <Header title={headerTitle} />
-</Layout>
+</BaseLayout>
